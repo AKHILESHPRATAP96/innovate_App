@@ -11,20 +11,20 @@ import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlin
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Container, Grid, Stack, alpha, styled } from '@mui/material';
+import { Grid, Stack, alpha, styled } from '@mui/material';
 import CreateTeam from './CreateTeam';
-import AppIcon from "../../assets/icon krite.avif"
+import AppIcon from "../../assets/Appicon/SideBarIcon.png"
 
 import FolderItem from './folders';
 import Footer from './footer';
 import InputBase from '@mui/material/InputBase';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-import MultipleSelectCheckmarks from '../DetailDisplayPannel/SelectNavButton';
-import { brandNames } from "../../constants/ButtonDropData"
-import MultipleSelect from '../DetailDisplayPannel/SelectNavButton';
-import SplitButton from '../DetailDisplayPannel/SelectNavButton';
-import MyComponent from '../DetailDisplayPannel/SelectNavButton';
+import NavButtons from '../DetailDisplayPannel/SelectNavButton';
+
+
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -58,7 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
@@ -95,7 +95,7 @@ export default function SideBarMenu(props) {
   };
 
   const drawer = (
-    <div >
+    <div  >
 
 
       <Grid container  >
@@ -140,14 +140,17 @@ export default function SideBarMenu(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: "black" }}
-          >
-            {navStatus}
-          </Typography>
+        
+            <Typography
+
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, color: "black" }}
+            >
+              {navStatus}
+            </Typography>
+       
           <Stack spacing={2} direction="row" alignItems="center">
             <Search>
               <SearchIconWrapper>
@@ -165,7 +168,7 @@ export default function SideBarMenu(props) {
 
         </Toolbar>
         <Divider sx={{ marginBottom: 1 }} />
-        <MyComponent />
+        <NavButtons />
         <Divider />
       </AppBar >
 

@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -34,5 +32,13 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  /* Adjust the size of images for small screen devices */
+  .small-image {
+  
+    height: 2vh; /* Maintain aspect ratio */
   }
 }

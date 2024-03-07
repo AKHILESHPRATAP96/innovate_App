@@ -133,7 +133,7 @@ export const Details = [
       `https://picsum.photos/seed/${Math.random()}/150`
     ],
     BrandImage: disney,
-    Categories: ["Transportation", "Technology"],
+    Categories: ["Transportation"],
     Tags: "Ride-sharing, Transportation, Convenience",
     NextMeeting: "Next week"
   }
