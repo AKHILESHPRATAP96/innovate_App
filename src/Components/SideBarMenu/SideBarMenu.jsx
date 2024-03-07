@@ -11,7 +11,7 @@ import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlin
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Grid, Stack, alpha, styled } from '@mui/material';
+import { Container, Grid, Stack, alpha, styled } from '@mui/material';
 import CreateTeam from './CreateTeam';
 import AppIcon from "../../assets/icon krite.avif"
 
@@ -21,8 +21,10 @@ import InputBase from '@mui/material/InputBase';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import MultipleSelectCheckmarks from '../DetailDisplayPannel/SelectNavButton';
-import { brandNames } from "../../constants/data"
+import { brandNames } from "../../constants/ButtonDropData"
 import MultipleSelect from '../DetailDisplayPannel/SelectNavButton';
+import SplitButton from '../DetailDisplayPannel/SelectNavButton';
+import MyComponent from '../DetailDisplayPannel/SelectNavButton';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -118,9 +120,9 @@ export default function SideBarMenu(props) {
 
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box >
       <CssBaseline />
-      <AppBar position="fixed"
+      <AppBar position="relative"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
@@ -160,8 +162,11 @@ export default function SideBarMenu(props) {
             <QuestionAnswerOutlinedIcon color="action" />
             <SettingsOutlinedIcon color='action' />
           </Stack>
-        </Toolbar>
 
+        </Toolbar>
+        <Divider sx={{ marginBottom: 1 }} />
+        <MyComponent />
+        <Divider />
       </AppBar >
 
 
@@ -190,6 +195,7 @@ export default function SideBarMenu(props) {
         >
 
           {drawer}
+          button
         </Drawer>
         <Drawer
           variant="permanent"
@@ -200,51 +206,17 @@ export default function SideBarMenu(props) {
           open
         >
           {drawer}
+          button
         </Drawer>
+
+
+
       </Box>
       {/* Main component */}
-      <Grid container display="flex" sx={{ marginTop: `64px`, width: { sm: `calc(100% - ${drawerWidth}px)` }, ml: { sm: `${drawerWidth}px` }, backgroundColor: "inherit" }}>
-        <Grid item xs={6} display="flex">
-          <MultipleSelect input={"brands"} names={brandNames}  />
-          <MultipleSelect input={"brands"} names={brandNames} />
-          <MultipleSelect input={"brands"} names={brandNames} />
 
-        </Grid>
-        <Grid item xs={6}></Grid>
-      </Grid>
-      {/* <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-      </Box> */}
+
+
+
 
     </Box>
   );
