@@ -1,13 +1,13 @@
-
+import { Container } from "@mui/material";
 import "./App.css";
 
 import InovateHubApp from "./sections/views/InovateHubApp";
 
 function App() {
   return (
-   
-      <InovateHubApp/>
-   
+    <div className="App">
+      <InovateHubApp />
+    </div>
   );
 }
 

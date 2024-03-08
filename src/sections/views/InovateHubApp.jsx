@@ -5,13 +5,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import "../../App.css"
 
 import List from '@mui/material/List';
 import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Grid, Stack, alpha, styled } from '@mui/material';
+import { Grid, Stack, alpha, styled, useMediaQuery, useTheme } from '@mui/material';
 import CreateTeam from '../../Components/SideBarMenu/CreateTeam';
 import AppIcon from "../../assets/Appicon/SideBarIcon.png"
 
@@ -81,6 +82,9 @@ export default function InovateHubApp() {
     const [navStatus, setNavstatus] = React.useState("")
     const [searchQuery, setSearchQuery] = React.useState('');
 
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
     const handleDrawerClose = () => {
         setIsClosing(true);
         setMobileOpen(false);
@@ -100,20 +104,20 @@ export default function InovateHubApp() {
     };
 
     const drawer = (
-        <div style={{ border: "1px solid  rgba(0, 0, 0, 0.1)", borderRadius: "4%" }}>
+        <div style={{ border: "1px solid 1px rgb(228, 237, 230)", boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.1)", borderRadius: "4%" }}>
 
 
             <Grid container display="flex" justifyContent="space-around" alignItems="center" gap={1} >
                 <Box display="flex" alignItems="center" gap={1}>
-                    <img src={AppIcon} style={{
+                    <img className='.small-image' src={AppIcon} style={{
                         borderRadius: "30%",
-                        height: '6vh'
+                        height: isSmallScreen ? '3vh' : "5vh"
                     }} />
                     <Typography fontWeight={400} ><Typography fontSize="0.8rem" textAlign="start" color="gray">INC</Typography>InnovateHub</Typography>
                 </Box>
-                <img src={FaceLogo} style={{
+                <img className='  .small-image' src={FaceLogo} style={{
                     borderRadius: "30%",
-                    height: '5vh'
+                    height: isSmallScreen ? '3vh' : "5vh"
                 }} />
 
             </Grid>
@@ -130,7 +134,7 @@ export default function InovateHubApp() {
 
 
     return (
-        <Box  >
+        <Box style={{ border: "1px solid 1px rgb(228, 237, 230)", boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.1)", borderRadius: "4%" }} >
             <CssBaseline />
             <AppBar position="relative"
                 sx={{

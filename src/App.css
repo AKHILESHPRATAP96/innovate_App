@@ -5,11 +5,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -22,23 +17,17 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (max-width: 600px) {
-  /* Adjust the size of images for small screen devices */
+
+@media (max-width: 800px) {
+ 
   .small-image {
   
     height: 2vh; /* Maintain aspect ratio */
   }
+  *{
+    font-size: 0.7rem;
+  }
+
 }
