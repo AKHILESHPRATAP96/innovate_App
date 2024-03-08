@@ -7,27 +7,25 @@ import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
 
-function CreateTeam() {
+function CreateTeam(props) {
 
-    function handleClick() {
-        console.log("Coming ")
-    }
+
 
     return (
         <Box>
-            <ListItemButton sx={{ padding: 0 }}>
+            <ListItemButton sx={{ padding: 0 }} onClick={props.handleClick}>
                 <ListItem >
                     <ListItemIcon sx={{ minWidth: "33px" }} >
                         <BrushIcon sx={{ height: "3vh" }} />
                     </ListItemIcon>
-                    <Typography  variant="body2" fontWeight={600}>Design team</Typography>
+                    <Typography variant="body2" fontWeight={600}>Design team</Typography>
                 </ListItem>
                 <ListItemIcon sx={{ backgroundColor: "rgb(245, 247, 247,0.2)", boxShadow: "1px 1px rgb(0,0,1,0.1)", borderRadius: "20%", justifyContent: "center", alignItems: "center" }}><KeyboardCommandKeyIcon sx={{ color: "grey", height: "2.5vh" }} /><Typography fontWeight={700}>+1</Typography></ListItemIcon>
 
             </ListItemButton>
 
 
-            <ListItemButton sx={{ padding: 0, }}>
+            <ListItemButton sx={{ padding: 0, }} onClick={props.handleClick}>
                 <ListItem>
                     <ListItemIcon sx={{ minWidth: "33px" }} >
                         <CampaignIcon sx={{ height: "3vh" }} />
@@ -36,7 +34,7 @@ function CreateTeam() {
                 </ListItem>
                 <ListItemIcon sx={{ backgroundColor: "rgb(245, 247, 247,0.2)", boxShadow: "1px 1px rgb(0,0,1,0.1)", borderRadius: "20%", justifyContent: "center", alignItems: "center" }}><KeyboardCommandKeyIcon sx={{ color: "grey", height: "2.5vh" }} /><Typography fontWeight={700}>+2</Typography></ListItemIcon>
             </ListItemButton>
-            <ListItemButton sx={{ padding: 0 }}>
+            <ListItemButton sx={{ padding: 0 }} onClick={props.handleClick}>
                 <ListItem>
                     <ListItemIcon sx={{ minWidth: "33px" }} >
                         <CodeIcon sx={{ height: "3vh" }} />
@@ -46,7 +44,7 @@ function CreateTeam() {
                 <ListItemIcon sx={{ backgroundColor: "rgb(245, 247, 247,0.2)", boxShadow: "1px 1px rgb(0,0,1,0.1)", borderRadius: "20%", justifyContent: "center", alignItems: "center" }}><KeyboardCommandKeyIcon sx={{ color: "grey", height: "2.5vh" }} /><Typography fontWeight={700}>+3</Typography></ListItemIcon>
             </ListItemButton>
 
-            <ListItemButton sx={{ padding: 0 }} onClick={handleClick}>
+            <ListItemButton sx={{ padding: 0 }}  >
                 <ListItem>
                     <ListItemIcon sx={{ minWidth: "33px" }} >
                         <AddBoxOutlinedIcon sx={{ height: "3vh" }} />

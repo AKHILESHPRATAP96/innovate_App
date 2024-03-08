@@ -81,6 +81,7 @@ export default function InovateHubApp() {
     const [isClosing, setIsClosing] = React.useState(false);
     const [navStatus, setNavstatus] = React.useState("")
     const [searchQuery, setSearchQuery] = React.useState('');
+    const [Display, setDisplay] = React.useState(true);
 
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -103,6 +104,13 @@ export default function InovateHubApp() {
         setSearchQuery(event.target.value);
     };
 
+    const handleClick = () => {
+        setDisplay(false)
+        setTimeout(() => {
+            setDisplay(true)
+        }, 100);
+    }
+
     const drawer = (
         <div style={{ border: "1px solid 1px rgb(228, 237, 230)", boxShadow: "0px 1px 2px rgba(0, 0, 0, 0.1)", borderRadius: "4%" }}>
 
@@ -122,8 +130,8 @@ export default function InovateHubApp() {
 
             </Grid>
             <Divider />
-            <List>
-                <CreateTeam />
+            <List >
+                <CreateTeam handleClick={handleClick} />
             </List>
             <Divider />
             <FolderItem NavStatus={setNavstatus} />
@@ -233,7 +241,7 @@ export default function InovateHubApp() {
             </Box>
             {/* Main component */}
 
-            <DisplayDetails searchQuery={searchQuery} />
+            {Display && <DisplayDetails searchQuery={searchQuery} />}
             <DisplayFooter />
 
 
